@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block header %}
+    <p>Test text goes here</p>
+    <p>Current Datetime: {{ current_datetime }}</p>
+{% endblock %}
+
+{% block content %}
+    {% include "parts/users.html" %}
+
+    <hr>
+    <h2>Random Number</h2>
+    {% if random_number <= 5 %}
+        <p style="color: red">{{ random_number }}</p>
+    {% else %}
+        <p style="color: blue">{{ random_number }}</p>
+    {% endif %}
+{% endblock %}

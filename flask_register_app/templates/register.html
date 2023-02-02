@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="post" enctype="multipart/form-data" class="form-signin">
+  {{ form.csrf_token }}
+
+  <div class="text-center mb-4">
+    <h1 class="h3 mb-3 font-weight-normal">Register</h1>
+  </div>
+
+  {% include "shared/flash.html" %}
+
+  <div class="form-label-group">
+    <input name="full_name" type="text" id="inputName" class="form-control" placeholder="Full name" required autofocus>
+    <label for="inputName">Full name</label>
+  </div>
+
+  <div class="form-label-group">
+    <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required>
+    <label for="inputEmail">Email address</label>
+  </div>
+
+  <div class="form-label-group">
+    <input name="image" type="file" id="image" class="form-control" placeholder="Profile image">
+    <label for="image">Profile image</label>
+  </div>
+
+  <div class="form-label-group">
+    <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    <label for="inputPassword">Password</label>
+  </div>
+
+  <div class="form-label-group">
+    <input name="confirm_password" type="password" id="inputConfirmPassword" class="form-control" placeholder="Confirm password" required>
+    <label for="inputConfirmPassword">Confirm password</label>
+  </div>
+
+  <div class="checkbox mb-3">
+    <label>
+      <input type="checkbox" name="terms" value="remember-me" required> Terms and Conditions
+    </label>
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+  <p class="mt-5 mb-3 text-muted text-center">&copy; 2020</p>
+</form>
+{% endblock %}
